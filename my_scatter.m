@@ -8,6 +8,12 @@ function [Z,S,P] = my_scatter(N, L, coverage_range)
 % coverage_range defines the length of the communication based
 % on the communication technology
 
+% The return values contain,
+% Z defines the means for the Gaussian Random Variable for the nodes in the network
+% S defines the covariance i.e. the uncertainty regarding positions based on Kalman
+% filtering based tracking systems
+% P defines the sampled Standard Gaussian Random Variable
+
 npoints = poissrnd(N);
 Z = rand(npoints, 2)*L;
 for i=1:npoints
