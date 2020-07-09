@@ -8,6 +8,9 @@ function [G_adj,points] = prob_graph(Z,S,P,D)
 % P defines the sampled Standard Gaussian Random Variable
 % D defines the coverage range based on the communication technology
 
+% The function returns
+% G_adj defines the graph for the nodes in the network
+
 size_graph = size(Z);
 N = size_graph(1);
 Weight = zeros(N,N);
