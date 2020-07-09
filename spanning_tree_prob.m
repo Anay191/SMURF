@@ -1,4 +1,15 @@
 function [T,dist,prev] = spanning_tree_prob(G,Z,points,source,D)
+
+% The function defines the spanning tree based on the probability of existence 
+% of links
+
+% The function parameters are
+% G defines the graph of the nodes in the network
+% Z defines the mean of the Gaussian Random Variable
+% points defines the points for all the nodes in the network
+% source defines the source of the spanning tree
+% D defines the communication range based on the communication
+% technology
 Q = [];
 dist = zeros(1,height(G.Nodes));
 prev = zeros(1,height(G.Nodes));
