@@ -1,15 +1,24 @@
 function [B,dist] = backup_route_calculation(T,G,Z,points, source, dest,D)
 
+% The function defines backup route for the primary route defined by the 
+% spanning tree.
+
+% The function parameters are
+% T defines the spanning tree for the nodes in the network
+% G defines the graph for the nodes in the network
+% Z defines the mean for the Gaussian Random Variable
+% points define the points for the nodes in the network
+% source defines the source for the spanning tree
+% dest defines the destination for the routing path
+% D defines the communication range based on the communication technology
+
+% The function returns
+% B defines the backup routes for the primary route defined by the spanning tree
+% dist defines the distance for the routes
+
 [path,d] = shortestpath(T,source,dest);
 B{1} = path;
 dist = d;
-% Calculate the probability of all the links for the nodes question in the
-% path. Introduce a weighting metric which balances the probability of the
-% route existing with the probability of the link existing.
-% To do final evaluation. Gather 100 points on the from the distribution
-% and check if the path exists for such. The probability of path existing
-% is calculated by gathering the possibilities of path existing for each of
-% the 100 points. Similarly for backup routes as well.
 for i=2:length(path)
     for k=1:length(points)
         for l=1:length(points)
