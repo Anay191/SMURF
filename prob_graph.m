@@ -10,6 +10,7 @@ function [G_adj,points] = prob_graph(Z,S,P,D)
 
 % The function returns
 % G_adj defines the graph for the nodes in the network
+% points defines the points for the node in the network
 
 size_graph = size(Z);
 N = size_graph(1);
