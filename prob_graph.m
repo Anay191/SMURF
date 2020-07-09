@@ -1,4 +1,13 @@
 function [G_adj,points] = prob_graph(Z,S,P,D)
+
+% The function defines the probability of links for nodes in the
+% network.
+% The function contains the parameters
+% Z defines the mean of the Gaussian Random Variable
+% S defines the covariance for the Gaussian Random Variable
+% P defines the sampled Standard Gaussian Random Variable
+% D defines the coverage range based on the communication technology
+
 size_graph = size(Z);
 N = size_graph(1);
 Weight = zeros(N,N);
