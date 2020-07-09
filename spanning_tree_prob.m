@@ -10,6 +10,11 @@ function [T,dist,prev] = spanning_tree_prob(G,Z,points,source,D)
 % source defines the source of the spanning tree
 % D defines the communication range based on the communication
 % technology
+
+% The function returns
+% T defines the spanning tree for the given source
+% dist defines the routing distance for each node from the source
+% prev defines the previous node for each node in the network
 Q = [];
 dist = zeros(1,height(G.Nodes));
 prev = zeros(1,height(G.Nodes));
